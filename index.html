@@ -1,3 +1,14 @@
+<!--
+block comments for html and outside of
+dedicated sections can go in sections like this
+-->
+<!--
+This is how you set a class (using  .class_name{
+settings;
+} )
+Here I created a class called memory_box and set the
+style to have a certain background colour, width and height
+  -->
 <style>
   .memory_box{
 background-color:orange;
@@ -6,20 +17,32 @@ height:200px;
   }
 </style>
 
+<!--
+headers can go inside <h1></h1> tags - you can change the 1
+to other numbers to change the size of the font
+-->
 <h1>Carolyn's website</h1>
 
+<!--
+Lines of text can be separated by <div></div>
+you can put multiple statements on the same line using <span></span>
+Within these tags, you can specify class, style and other things
+-->
 <div>A magpie stole my cat's shrew</div>
 <span>First part of this line</span>
 <span style =color:blue>second part of this line</span>
 <div class="">And this is a different line
 </div>
+
+<!--
+Here we create a table using <table></table>
+<tr></tr> defines a new table row
+<td></td> defines a new table colomn
+we can give each cell an id that we can refer to later
+-->
 <table class="">
   <tr>
-    <td>
-      <!--
-block comment here
--->
- <div id="box0"  class = "memory_box" ></div></td>
+    <td><div id="box0"  class = "memory_box" ></div></td>
     <td><div id="box1" class="memory_box"></div></td>
     <td><div id="box2" class="memory_box"></div></td>
     <td><div id="box3" class="memory_box"></div></td>
@@ -31,24 +54,42 @@ block comment here
     <td><div id="box7" class="memory_box"></div></td>
   </tr>
 </table>
+
+<!--
+Now onto some javascript
+javascript is what makes your page interactive!
+We start the script by using the <script></script> tags and you
+can specify text/javascript to make it easy to follow
+-->
 <script type="text/javascript">
   /*
-  block comment
-  javascript is what makes your page interactive!
+  block comments within javascript look like this
   */
-  //single line comment
+  //single line comments within javascript look like this
+
+  /*
+  We can create alerts that pop up on the website when it is opened
+  to do this, we can use alert()
+  */
   howdy="Gee I feel bad. My girlfriend is so lovely and I shouted at her";
   alert(howdy);
 
-
-
-  //an object can store multiple variables
+  /*
+  Variables should be defined using var - this makes your script nice and
+  tidy
+  */
+  //an object can store multiple variables - to call the different parts
+  //of an object, use the . e.g. obj.something
   var card_obj = {
     card_letters: ["a", "b", "c", "d", "a", "b", "c", "d"],
     visible_letters: [],
     selected_boxes: []
   }
 
+  /*
+  If you want to include something in the webpage log, you can use
+  console.log to add it in
+  */
   console.log(card_obj.card_letters);
   card_obj;
 </script>
