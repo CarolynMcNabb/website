@@ -1,3 +1,11 @@
+<style>
+  .memory_box{
+background-color:orange;
+width:200px;
+height:200px;
+  }
+</style>
+
 <h1>Carolyn's website</h1>
 
 <div>A magpie stole my cat's shrew</div>
@@ -5,36 +13,42 @@
 <span style =color:blue>second part of this line</span>
 <div class="">And this is a different line
 </div>
-<table>
+<table class="">
   <tr>
-    <td style="background-color:orange; width:200px; height:200px">hello</td>
-    <td>Row 1 Column 1</td>
-    <td>Row 1 Column 2</td>
-    <td>Row 1 Column 3</td>
+    <td>
+      <!--
+block comment here
+-->
+ <div id="box0"  class = "memory_box" ></div></td>
+    <td><div id="box1" class="memory_box"></div></td>
+    <td><div id="box2" class="memory_box"></div></td>
+    <td><div id="box3" class="memory_box"></div></td>
   </tr>
   <tr>
-    <td>there</td>
-    <td>Row 2 Column 1</td>
-    <td>Row 2 Column 2</td>
-    <td>Row 2 Column 3</td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td style=""><div class="">
-
-    </div></td>
-    <td><div class="">
-
-    </div></td>
-    <td>Row 1 Column 2</td>
-    <td>Row 1 Column 3</td>
-  </tr>
-  <tr>
-    <td>there</td>
-    <td>Row 2 Column 1</td>
-    <td>Row 2 Column 2</td>
-    <td>Row 2 Column 3</td>
+    <td><div id="box4" class="memory_box"></div></td>
+    <td><div id="box5" class="memory_box"></div></td>
+    <td><div id="box6" class="memory_box"></div></td>
+    <td><div id="box7" class="memory_box"></div></td>
   </tr>
 </table>
+<script type="text/javascript">
+  /*
+  block comment
+  javascript is what makes your page interactive!
+  */
+  //single line comment
+  howdy="Gee I feel bad. My girlfriend is so lovely and I shouted at her";
+  alert(howdy);
+
+
+
+  //an object can store multiple variables
+  var card_obj = {
+    card_letters: ["a", "b", "c", "d", "a", "b", "c", "d"],
+    visible_letters: [],
+    selected_boxes: []
+  }
+
+  console.log(card_obj.card_letters);
+  card_obj;
+</script>
