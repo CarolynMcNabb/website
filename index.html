@@ -42,7 +42,7 @@ we can give each cell an id that we can refer to later
 -->
 <table class="">
   <tr>
-    <td><div id="box0"  class = "memory_box" ></div></td>
+    <td><div id="box0" class="memory_box"></div></td>
     <td><div id="box1" class="memory_box"></div></td>
     <td><div id="box2" class="memory_box"></div></td>
     <td><div id="box3" class="memory_box"></div></td>
@@ -61,6 +61,45 @@ javascript is what makes your page interactive!
 We start the script by using the <script></script> tags and you
 can specify text/javascript to make it easy to follow
 -->
+
+<!--
+First we will load jquery using the minified code - you can alternatively
+save the http site as a document and call that instead. Integrity check
+makes sure that the script hasn't been corrupted. If you load from a file,
+you no longer need the integriy or crossorigin parts
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous">
+</script>
+-->
+<script src = "libraries/jquery-3.6.0.min.js">
+</script>
+
+<script type="text/javascript">
+  function hello_there(){
+    alert("hi hi")
+  }
+      //here we use jquery to get something to happen when we click on a box
+/*
+  $(".memory_box").on("click",function(){
+    //what you want to happen
+    alert("hi it's me")
+  })
+  */
+  //or you could use something like This
+  //$(".memory_box").on("click",hello_there);
+
+  $(".memory_box").on("click",function(){
+    //what you want to happen
+    var this_number = this.id //make a variable called this_number
+    //that gets the id from where you click
+      .replace("box","");//and replaces the "box" with blanks
+    console.log(this_number); //will tell you in the console information about
+    //where you have clicked
+  })
+</script>
+
 <script type="text/javascript">
   /*
   block comments within javascript look like this
@@ -71,7 +110,7 @@ can specify text/javascript to make it easy to follow
   We can create alerts that pop up on the website when it is opened
   to do this, we can use alert()
   */
-  howdy="Gee I feel bad. My girlfriend is so lovely and I shouted at her";
+  howdy="Gee my girlfriend is pretty";
   alert(howdy);
 
   /*
