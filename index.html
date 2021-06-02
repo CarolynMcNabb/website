@@ -14,6 +14,9 @@ style to have a certain background colour, width and height
 background-color:orange;
 width:200px;
 height:200px;
+font-size: 50px;
+text-align: center;
+line-height: 200px;
   }
 </style>
 
@@ -80,6 +83,28 @@ crossorigin="anonymous">
   function hello_there(){
     alert("hi hi")
   }
+
+    /*
+    Variables should be defined using var - this makes your script nice and
+    tidy
+    */
+    //an object can store multiple variables - to call the different parts
+    //of an object, use the . e.g. obj.something
+    var card_obj = {
+      card_letters: [
+      "a", //box0
+      "b", //box1
+      "c", //box2
+      "d", //box3
+      "a", //box4
+      "b", //box5
+      "c", //box6
+      "d"  //box7
+      ],
+      visible_letters: [],
+      selected_boxes: []
+    }
+
       //here we use jquery to get something to happen when we click on a box
 /*
   $(".memory_box").on("click",function(){
@@ -97,6 +122,25 @@ crossorigin="anonymous">
       .replace("box","");//and replaces the "box" with blanks
     console.log(this_number); //will tell you in the console information about
     //where you have clicked
+    $(this).html(this_number) //select element with jquery
+    //and print this_number in the box that you have selected
+
+
+    var this_letter = card_obj.card_letters[this_number];
+    $(this).html(this_letter)
+    card_obj.visible_letters.push(this_letter);
+
+    card_obj.selected_boxes.push(this.id)
+
+    if (card_obj.visible_letters.length == 2){
+      if(card_obj.visible_letters[0] ==
+      card_obj.visible_letters[1]){
+        $("#" +
+        card_obj.selected_boxes[0]).fadeOut();
+        $("#" +
+        card_obj.selected_boxes[1]).fadeOut();
+        }
+    }
   })
 </script>
 
@@ -110,20 +154,8 @@ crossorigin="anonymous">
   We can create alerts that pop up on the website when it is opened
   to do this, we can use alert()
   */
-  howdy="Gee my girlfriend is pretty";
+  howdy="Kissing coupons worth double till midnight!";
   alert(howdy);
-
-  /*
-  Variables should be defined using var - this makes your script nice and
-  tidy
-  */
-  //an object can store multiple variables - to call the different parts
-  //of an object, use the . e.g. obj.something
-  var card_obj = {
-    card_letters: ["a", "b", "c", "d", "a", "b", "c", "d"],
-    visible_letters: [],
-    selected_boxes: []
-  }
 
   /*
   If you want to include something in the webpage log, you can use
