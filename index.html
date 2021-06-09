@@ -119,28 +119,53 @@ crossorigin="anonymous">
     //what you want to happen
     var this_number = this.id //make a variable called this_number
     //that gets the id from where you click
-      .replace("box","");//and replaces the "box" with blanks
-    console.log(this_number); //will tell you in the console information about
-    //where you have clicked
-    $(this).html(this_number) //select element with jquery
-    //and print this_number in the box that you have selected
+    .replace("box","");//and replaces the "box" with blanks
+  console.log(this_number); //will tell you in the console information about
+  //where you have clicked
+  $(this).html(this_number) //select element with jquery
+  //and print this_number in the box that you have selected
 
 
-    var this_letter = card_obj.card_letters[this_number];
-    $(this).html(this_letter)
-    card_obj.visible_letters.push(this_letter);
+  var this_letter = card_obj.card_letters[this_number];
+  $(this).html(this_letter)
+  card_obj.visible_letters.push(this_letter);
 
-    card_obj.selected_boxes.push(this.id)
+  card_obj.selected_boxes.push(this.id)
+      if (card_obj.visible_letters.length == 2){
+    /*if the person presses the same box twice, deselect it */
+    if(card_obj.selected_boxes[0] == this.id){
+      alert("we are about to deselect this box");
+      $("#" +
+      card_obj.selected_boxes[0]).html("");
+              card_obj.selected_boxes = [];
+              card_obj.visible_letters =[];
+    } else {
 
-    if (card_obj.visible_letters.length == 2){
+
+
       if(card_obj.visible_letters[0] ==
       card_obj.visible_letters[1]){
         $("#" +
         card_obj.selected_boxes[0]).fadeOut();
         $("#" +
         card_obj.selected_boxes[1]).fadeOut();
-        }
+        card_obj.visible_letters =[];
+        card_obj.selected_boxes = [];
+      } else {
+        setTimeout(function(){
+          $("#" +
+          card_obj.selected_boxes[0]).html("");
+          $("#" +
+          card_obj.selected_boxes[1]).html("");
+          card_obj.visible_letters =[];
+          card_obj.selected_boxes = [];
+        }, 1000);
+
+      }
+
     }
+    }
+
   })
 </script>
 
@@ -154,7 +179,7 @@ crossorigin="anonymous">
   We can create alerts that pop up on the website when it is opened
   to do this, we can use alert()
   */
-  howdy="Kissing coupons worth double till midnight!";
+  howdy="I'm selling my Cadillac and buying a horse!";
   alert(howdy);
 
   /*
